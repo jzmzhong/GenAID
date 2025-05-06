@@ -13,7 +13,7 @@ __set_seed: !apply:torch.manual_seed [!ref <seed>]
 # Set up folders for reading from and writing:
 root: /home/s2526235
 data_folder: !ref <root>/AccentedTTS/data/VCTK-Corpus-0.92-24kHz
-csv_prepared_folder: !ref <data_folder>
+csv_prepared_folder: "./VCTK/"
 
 pretrained_path: "./GenAID_v6/save/CKPT+2024-07-21+23-06-07+00"
 output_folder: !ref <data_folder>/GenAID_v6_embeddings

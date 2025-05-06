@@ -5,7 +5,7 @@ from tqdm import tqdm
 DATA_DIR = "/home/s2526235/AccentedTTS/data/VCTK-Corpus-0.92-24kHz"
 WAV_DIR = os.path.join(DATA_DIR, "wav48_silence_trimmed")
 SPK2ACC_PATH = os.path.join(DATA_DIR, "speaker2accent_GenAIDlabels.txt")
-OUT_PATH = os.path.join(DATA_DIR, "all_file_paths.csv")
+OUT_PATH = "./VCTK/all_file_paths.csv"
 
 
 def read_spk2acc(path):

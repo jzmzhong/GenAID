@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 """Recipe for performing inference on Accent Classification system with CommonVoice Accent.
 
 To run this recipe, do the following:
-> python extract_embeddings_GenAID.py extract_embeddings_GenAID_v7.yaml
+> python extract_embeddings_GenAID.py extract_embeddings_GenAID_v6.yaml
 
 Author
 ------
