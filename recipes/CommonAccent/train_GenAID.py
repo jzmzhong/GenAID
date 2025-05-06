@@ -13,7 +13,7 @@ import math
 """Recipe for training an Accent Identification (AID) system GenAID, with CommonAccent dataset.
 
 To run this recipe, do the following:
-> python train_GenAID.py train_GenAID_v7.yaml
+> python train_GenAID.py train_GenAID_v6.yaml
 
 Authors
 ------

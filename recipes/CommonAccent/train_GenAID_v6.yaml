@@ -15,7 +15,7 @@ __set_seed: !apply:torch.manual_seed [!ref <seed>]
 root: /home/s2526235
 data_folder: !ref <root>/AID/data/cv-corpus-17.0-2024-03-15
 csv_prepared_folder: ./CommonAccent-CV17-spk-resplit
-output_folder: ./GenAID_v7
+output_folder: ./GenAID_v6
 save_folder: !ref <output_folder>/save
 rir_folder: !ref <root>/AID/data/rir
 train_log: !ref <output_folder>/train_log.txt
@@ -64,7 +64,7 @@ max_batch_len: 60 # XLSR is way bigger than w2v2-base, this works well
 num_bucket: 200
 num_workers: 4
 
-batch_size: 16
+batch_size: 6
 
 dynamic_batch_sampler:
    max_batch_len: !ref <max_batch_len>
@@ -188,7 +188,6 @@ weight_adv: 10.0
 
 # standard NLL loss
 compute_cost: !name:speechbrain.nnet.losses.nll_loss
-label_smoothing: 0.1
 compute_cost_adv: !name:speechbrain.nnet.losses.mse_loss
 
 log_softmax: !new:speechbrain.nnet.activations.Softmax

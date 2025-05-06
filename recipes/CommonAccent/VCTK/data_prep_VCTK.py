@@ -30,6 +30,8 @@ for root, dirs, files in sorted(os.walk(WAV_DIR)):
                 utt_id = file[:-5]
                 spk = utt_id.split("_")[0]
                 acc = spk2acc[spk]
+                utt_id = "vctk#wav48_silence_trimmed/" + spk + "/" + file[:-5] # to match the utterance id in coqui-ai yourtts speaker/accent manager
+                spk = "VCTK_" + spk
                 full_path = os.path.join(full_dir, file)
                 info = torchaudio.info(full_path)
                 dur = info.num_frames / info.sample_rate

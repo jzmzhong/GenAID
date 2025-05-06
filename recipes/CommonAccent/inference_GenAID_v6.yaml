@@ -14,13 +14,13 @@ __set_seed: !apply:torch.manual_seed [!ref <seed>]
 root: /home/s2526235
 data_folder: !ref <root>/AID/data/cv-corpus-17.0-2024-03-15
 csv_prepared_folder: ./CommonAccent-CV17-spk-resplit
-pretrained_path: ./GenAID_v7/save/CKPT+2025-03-11+13-00-44+00
+pretrained_path: ./GenAID_v6/save/CKPT+2024-07-21+23-06-07+00
 output_folder: ./results
 
 device: 'cuda:0'
 skip_prep: True
 # max audio lenth allowed, higher than this is dropped
-max_audio_length: 10.0
+max_audio_length: 100.0
 
 # URL for the biggest Fairseq english wav2vec2 model.
 wav2vec2_hub: "facebook/wav2vec2-large-xlsr-53" # dimension of this model is 1024

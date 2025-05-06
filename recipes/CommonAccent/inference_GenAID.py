@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 """Recipe for performing inference on an Accent Identification (AID) system GenAID, with CommonAccent dataset.
 
 To run this recipe, do the following:
-> python inference_GenAID.py inference_GenAID_v7.yaml
+> python inference_GenAID.py inference_GenAID_v6.yaml
 
 Author
 ------

@@ -1,8 +1,9 @@
 # #################################
-# Training ECAPA-TDNN embeddings for Accent identification (LID) of English Data.
+# Extracting AID embeddings.
 #
 # Authors:
-#  * For SLT Juan Pablo and Sara
+#  * Created by Juan Pablo Zuluaga and Sara 2023
+#  * Modified by Jinzuomu Zhong 2024
 # #################################
 
 # Seed needs to be set at top of yaml, before objects with parameters are made
@@ -14,8 +15,8 @@ root: /home/s2526235
 data_folder: !ref <root>/AccentedTTS/data/VCTK-Corpus-0.92-24kHz
 csv_prepared_folder: !ref <data_folder>
 
-pretrained_path: "./GenAID_v7/save/CKPT+2025-03-11+13-00-44+00"
-output_folder: !ref <data_folder>/GenAID_v7_embeddings
+pretrained_path: "./GenAID_v6/save/CKPT+2024-07-21+23-06-07+00"
+output_folder: !ref <data_folder>/GenAID_v6_embeddings
 
 device: 'cuda:0'
 skip_prep: True

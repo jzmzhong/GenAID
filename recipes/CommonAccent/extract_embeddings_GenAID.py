@@ -116,7 +116,7 @@ class AccID_inf(sb.Brain):
         probs = self.hparams.log_softmax(outputs_3)
         classes = torch.argmax(probs, dim=1)
 
-        return outputs, lens, classes, probs
+        return outputs_2, lens, classes, probs
 
     def compute_objectives(self, inputs, batch, stage):
         """Computes the loss given the predicted and targeted outputs.
@@ -281,8 +281,6 @@ def dataio_prep(hparams):
     @sb.utils.data_pipeline.provides("accent", "accent_encoded")
     def label_pipeline(accent):
         yield accent
-        if accent == "others":
-            accent = "us"
         accent_encoded = accent_encoder.encode_label_torch(accent)
         yield accent_encoded
 
@@ -383,9 +381,9 @@ if __name__ == "__main__":
         )
         print(class_count)
 
-        with open(os.path.join(hparams["output_folder"], "accent_predictions_GenAID_v6.txt"), "w") as f:
+        with open(os.path.join(hparams["output_folder"], "accent_predictions.txt"), "w") as f:
             for utt_id, accent in accent_predictions.items():
                 accent = accent_encoder.ind2lab[accent.cpu().item()]
                 f.write(utt_id+"\t"+accent+"\r\n")
-        with fsspec.open(os.path.join(hparams["output_folder"], "accents_GenAID_v6.pth"), "wb") as f:
+        with fsspec.open(os.path.join(hparams["output_folder"], "accents.pth"), "wb") as f:
             torch.save(accent_mapping, f)
